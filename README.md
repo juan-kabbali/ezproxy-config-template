@@ -1,1 +1,1 @@
-# EzproxyTemplate
+# Ezproxy-Config-Template
