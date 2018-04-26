@@ -1,0 +1,53 @@
+# ****************************EZproxy options *****************************************
+Name MyServerName
+LoginPort 80
+LoginPort 2048
+# LoginPortSSL 443
+# Option ForceHTTPSLogin
+# Option ProxyByHostname
+
+##  Connection limits. == see: http://www.oclc.org/support/documentation/ezproxy/cfg/limits.htm
+
+MaxLifetime 120
+MaxSessions 500
+MaxVirtualHosts 1000
+
+##  Securing EZproxy == see: http://www.oclc.org/support/documentation/ezproxy/example/securing.htm 
+
+Audit Most
+AuditPurge 7
+Option StatusUser
+Option LogUser
+IntruderIPAttempts -interval=1 -expires=1 200
+IntruderUserAttempts -interval=1 -expires=1 200
+UsageLimit -enforce -interval=1 -expires=1 -MB=200 Global
+
+LogFormat %h %{ezproxy-session}i %u %t "%r" %s %b %{ezproxy-dbvar0}i
+LogFile -strftime logs/ezp%Y%m.log
+
+Option UsernameCaretN
+Option AllowWebSubdirectories
+#Option MenuByGroups
+
+# **************************** Database Definitions *****************************************?
+
+dbvar0 worldcat
+T Worldcat.org
+Description base de datos para buscar contenido general
+U http://worldcat.org
+DJ worldcat.org
+
+dbvar0 whatismyip
+T WhatIsMyIP
+Description Base de datos para consultar la ip de tu equipo
+U http://whatismyip.com
+DJ whatismyip.com
+
+
+
+# ***************** SIEMPRE DEBE ESTAR DE ULTIMA ***********************
+dbvar0 doisys
+Title DOI System
+Description base de datos para buscar contenido comun entre proveedores
+URL http://dx.doi.org
+Domain doi.org
