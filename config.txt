@@ -29,7 +29,7 @@ Option UsernameCaretN
 Option AllowWebSubdirectories
 #Option MenuByGroups
 
-# **************************** Database Definitions *****************************************?
+# **************************** Database Definitions *****************************************
 
 dbvar0 worldcat
 T Worldcat.org
@@ -47,7 +47,7 @@ DJ whatismyip.com
 
 # ***************** SIEMPRE DEBE ESTAR DE ULTIMA ***********************
 dbvar0 doisys
-Title DOI System
+Title -hide DOI System
 Description base de datos para buscar contenido comun entre proveedores
 URL http://dx.doi.org
 Domain doi.org
