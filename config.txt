@@ -2,15 +2,15 @@
 Name MyServerName
 LoginPort 80
 LoginPort 2048
-# LoginPortSSL 443
-# Option ForceHTTPSLogin
-# Option ProxyByHostname
+LoginPortSSL 443
+Option ForceHTTPSLogin
+Option ProxyByHostname
 
 ##  Connection limits. == see: http://www.oclc.org/support/documentation/ezproxy/cfg/limits.htm
 
-MaxLifetime 120
-MaxSessions 500
-MaxVirtualHosts 1000
+MaxLifetime 240
+MaxSessions 1000
+MaxVirtualHosts 1500
 
 ##  Securing EZproxy == see: http://www.oclc.org/support/documentation/ezproxy/example/securing.htm 
 
