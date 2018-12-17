@@ -25,6 +25,26 @@ UsageLimit -enforce -interval=1 -expires=1 -MB=200 Global
 LogFormat %h %{ezproxy-session}i %u %t "%r" %s %b %{ezproxy-dbvar0}i
 LogFile -strftime logs/ezp%Y%m.log
 
+# WEB MEDIA SOURCES
+LogFilter *.css*
+LogFilter *.ico*
+LogFilter *.js*
+LogFilter *.woff*
+LogFilter *.sgv*
+LogFIlter *.uri*
+
+# INTERNAL SOURCES
+LogFilter */login*
+LogFilter */logout*
+LogFilter */menu*
+LogFIlter */public/*
+LogFilter */admin*
+LogFilter */status*
+LogFilter *myadmin*
+LogFIlter *mysql*
+LogFIlter *bea_wls_deployment_internal*
+LogFIlter *robots.txt*
+
 Option UsernameCaretN
 Option AllowWebSubdirectories
 #Option MenuByGroups
